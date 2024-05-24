@@ -1,0 +1,69 @@
+# 项目相关配置
+mproject:
+  # 名称
+  name: MProject
+  # 版本
+  version: 1.1
+  # 版权年份
+  copyrightYear: 2021
+  # 实例演示开关
+  demoEnabled: true
+  #文件路径 示例（ Windows配置D:/mproject/uploadPath，Linux配置 /home/mproject/uploadPath）
+  profile: /home/mproject/uploadPath
+  #获取ip地址开关
+  addressEnabled: true
+  staticUploadPrefix: E:/mproject/uploadPath
+  staticUpload: /static/upload/**
+  uploadFolderPath: E:/mproject/uploadPath
+  imgServer: http://localhost:8888/teamProject/
+  
+  #用户默认图标
+  userImg: user.jpg
+  #项目默认图标
+  projectImg: project.png
+  downloadServer: http://localhost:8888
+   
+# 开发环境配置
+server:
+  # 服务器的HTTP端口，默认为80
+  port: 8888
+#  servlet:
+#    # 应用的访问路径
+#    context-path: /api/
+  tomcat:
+    uri-encoding: UTF-8
+    max-threads: 800
+    # Tomcat启动初始化的线程数，默认值25
+    min-spare-threads: 30
+
+# 日志配置
+logging:
+  level:
+    com.ruoyi: debug
+    org.springframework: debug
+
+# 用户配置
+user:
+  password:
+    # 密码错误{maxRetryCount}次锁定10分钟
+    maxRetryCount: 5
+    
+spring:
+  datasource:
+    type: com.alibaba.druid.pool.DruidDataSource
+    driver-class-name: com.mysql.jdbc.Driver
+    druid:
+      url: jdbc:mysql://127.0.0.1:3306/teamwork?useUnicode=true&characterEncoding=utf8&zeroDateTimeBehavior=convertToNull&useSSL=true&serverTimezone=GMT%2B8&tinyInt1isBit=false
+      username: root
+      password: 123123
+  redis:
+
+    host: 127.0.0.1
+    port: 6379
+    timeout: 10s
+    lettuce:
+      pool:
+        min-idle: 0
+        max-idle: 8
+        max-active: 8
+        max-wait: -1ms
